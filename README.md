@@ -4,7 +4,7 @@ TODO: Add more to the title of your project here
 
 TODO: Give a brief description of what your project is about
 
-This project...
+This project is hooefully gonna make me a superfast coder!
 
 # Brief description of folder and file contents
 
