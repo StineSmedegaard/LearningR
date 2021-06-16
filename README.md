@@ -33,3 +33,7 @@ You'll need to have remotes installed for this to work.
 For more information on this folder and file workflow and setup, check
 out the [prodigenr](https://rostools.github.io/prodigenr) online
 documentation.
+
+#Kommentar
+#usethis::use_blank_slate("project") --> tømmer environment og sørger for at starte på en frisk 
+
