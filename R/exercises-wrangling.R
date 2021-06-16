@@ -127,3 +127,22 @@ nhanes_small %>%
 nhanes_small %>%
     summarise(median_age = median(age, na.rm = TRUE),
                  median_phys_active_days = median(phys_active_days, na.rm = TRUE))
+
+# to look at those with and those without DM - to look by group
+nhanes_small %>%
+    group_by(diabetes) %>%
+    summarise(mean_age = mean(age, na.rm = TRUE),
+              mean_bmi = mean(bmi, na.rm = TRUE))
+
+# to get rid of na use the filter function. ! means not this
+nhanes_small %>%
+    filter(!is.na(diabetes)) %>%
+    group_by(diabetes) %>%
+    summarise(mean_age = mean(age, na.rm = TRUE),
+              mean_bmi = mean(bmi, na.rm = TRUE)) %>%
+    ungroup() # add ungroup so that you can work on the dataset later in a not grouped form
+
+## saving datasets as files
+# saving data as an .rda file in the data folder
+usethis::use_data(nhanes_small, overwrite = TRUE)
+
