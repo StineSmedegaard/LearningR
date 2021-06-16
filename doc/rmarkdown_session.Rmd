@@ -1,0 +1,37 @@
+---
+title: "Reproducible documents"
+author: "Stine Bech Smedegaard"
+date: "16/6/2021"
+output: html_document
+---
+
+```{r}
+# genvej til code chunk = CTR + Alt + i 
+```
+
+```{r}
+2 + 2
+```
+
+```{r setup, include=FALSE}
+# der må ikke bruges underscore i curly brackets
+source(here::here("R/package-loading.R"))
+load(here::here("data/nhanes_small.rda"))
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r}
+nhanes_small
+```
+
+```{r mean-age-bmi-table}
+# making a table from exercise 9.7
+nhanes_small %>%
+    filter(!is.na(diabetes)) %>%
+    group_by(diabetes, sex) %>%
+    summarise(mean_age = mean(age, na.rm = TRUE),
+              mean_bmi = mean(bmi, na.rm = TRUE)) %>%
+    ungroup() %>% 
+    knitr::kable(caption = "table 1. Mean Age and BMI.")
+```
+
