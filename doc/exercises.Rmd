@@ -16,6 +16,7 @@ output: word_document
 *italics*
 
 ## Analysis
+
 ```{r}
 2+2
 ```
@@ -49,4 +50,11 @@ nhanes_small %>%
 
 ```
 
+![Image by Dimitri Houtteman from Pixabay.](images/kitten.jpg) 
+```{r kitten-image}
+knitr::include_graphics(here::here("doc/Images/kitten.jpg"))
+```
 
+```{r kitten-image2, out.width="50%", out.height="50%", fig.cap="Kitten attacking flowers!"}
+knitr::include_graphics(here::here("doc/Images/kitten.jpg"))
+```
