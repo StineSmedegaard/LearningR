@@ -157,3 +157,5 @@ nhanes_small %>%
 nhanes_small %>%
     summarise(max_bmi = max(bmi, na.rm = TRUE),
               min_bmi = min(bmi, na.rm = TRUE))
+
+r3::open_feedback_survey_intro()
